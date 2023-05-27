@@ -1,0 +1,22 @@
+
+<div class="wraper">
+  <div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <h1>INICIAR SESION</h1>
+      <div id="email">
+        <div class="form-floating mb-3 mt-4">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" [(ngModel)]="empleado.email">
+          <label for="floatingInput">Email address</label>
+        </div>
+      </div>
+      <div id="password">
+        <div class="form-floating d-flex mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="empleado.password">
+          <label for="floatingPassword">Password</label>
+          <button type="button" id="verPassword"><i class="bi bi-eye-fill" id="passwordIcon" style="font-size: 1.3rem" (click)="viewPassword()"></i></button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-warning mt-3">Iniciar Sesion</button>
+    </form>
+  </div>
+</div>

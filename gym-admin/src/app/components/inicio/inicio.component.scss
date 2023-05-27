@@ -1,0 +1,22 @@
+
+#clientes-card {
+    .card-body {
+        width: 400px;
+        height: 400px;
+        background-image: url('../../../assets/img/20945053.jpg');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+    }
+}
+
+#entrenadores-card {
+    .card-body {
+        width: 400px;
+        height: 400px;
+        background-image: url('../../../assets/img/20944130.jpg');
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+    }
+}

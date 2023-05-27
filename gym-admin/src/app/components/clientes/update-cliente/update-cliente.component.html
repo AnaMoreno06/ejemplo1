@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="mb-3 d-flex justify-content-end ">
+        <a type="button" class="btn btn btn-outline-warning" [routerLink]="['/clientes']"><i class="bi bi-skip-backward-fill" style="font-size: 1.2rem;"></i> Regresar</a>
+    </div>
+    <div class="card mb-5">
+        <div class="card-body">
+            <h3 class="card-title m-3 mb-5">Editar Cliente</h3>
+            <form #updateForm="ngForm" (ngSubmit)="updateCliente(updateForm)">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingInput" placeholder="cedula" min="0" max="9999999999" name="cedula" [(ngModel)]="cliente.cedula" (change)="checkCedula()">
+                            <label for="floatingInput">Cedula</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="cedulaAlert" role="alert"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="nombre" autocapitalize="words" name="nombres" [(ngModel)]="cliente.nombre">
+                            <label for="floatingInput">Nombres</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="apellidos" autocapitalize="words" name="apellidos" [(ngModel)]="cliente.apellido">
+                            <label for="floatingInput">Apellidos</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="correo" autocapitalize="words" name="correo" [(ngModel)]="cliente.email" (change)="checkEmail()">
+                            <label for="floatingInput">Correo</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="correoAlert" role="alert"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingInput" placeholder="telefono" autocapitalize="words" name="telefono" [(ngModel)]="cliente.telefono" (change)="checkTelefono()">
+                            <label for="floatingInput">Telefono</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="telefonoAlert" role="alert"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3" >
+                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="entrenador" [(ngModel)]="cliente.entrenador">
+                              <option selected>Entrenador</option>
+                              <option *ngFor="let entrenador of entrenadores" value="{{entrenador.id}}">{{entrenador.nombre}} {{entrenador.apellido}}</option>
+                            </select>
+                            <label for="floatingSelect">Seleccione un entrenador</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" step="0.1" class="form-control" id="floatingInput" placeholder="peso" autocapitalize="words" name="peso" [(ngModel)]="cliente.peso" (change)="checkPeso()" >
+                            <label for="floatingInput">Peso</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="pesoAlert" role="alert"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" step="0.01" class="form-control" id="floatingInput" placeholder="altura" autocapitalize="words" name="altura" [(ngModel)]="cliente.altura" (change)="checkAltura()">
+                            <label for="floatingInput">Altura</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="alturaAlert" role="alert"></div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="floatingInput" placeholder="imc" autocapitalize="words" name="imc" [(ngModel)]="cliente.imc" disabled >
+                            <label for="floatingInput">IMC</label>
+                        </div>
+                        <div class="alert alert-danger fade" id="imcAlert" role="alert"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

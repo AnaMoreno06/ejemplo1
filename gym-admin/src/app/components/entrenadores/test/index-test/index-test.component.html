@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="mb-3 d-flex justify-content-end ">
+        <a type="button" class="btn btn btn-outline-warning" [routerLink]="['/entrenadores/tests/add']"><i class="bi bi-person-plus-fill" style="font-size: 1.2rem;"></i> Agregar Test </a>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title m-3">Test</h3>
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col" colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let test of tests">
+                        <th scope="row">{{test.id}}</th>
+                        <td>{{test.nombre}}</td>
+                        <td>{{test.tipo}}</td>
+                        <td><a [routerLink]="['/entrenadores/tests', test.id]"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a [routerLink]="['/entrenadores/tests/addEjercicio/', test.id]"><i class="bi bi-plus" style="color: rgb(18, 209, 18); font-size: 1rem"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="mb-3 d-flex justify-content-end ">
+        <a type="button" class="btn btn btn-outline-warning" [routerLink]="['/entrenadores/ejercicios']"><i class="bi bi-skip-backward-fill" style="font-size: 1.2rem;"></i> Regresar</a>
+    </div>
+    <div class="card mb-5">
+        <div class="card-body">
+            <h3 class="card-title m-3 mb-5">Nuevo Ejercicio</h3>
+            <form #updateForm="ngForm" (ngSubmit)="updateEjercicio(updateForm)">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="nombre" autocapitalize="words" name="nombre" [(ngModel)]="ejercicio.nombre">
+                            <label for="floatingInput">Ejercicio</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="mb-3">
+        <div class="row">
+            <div class="col-5">
+                <div class="form-floating mb-3" >
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="entrenador" [(ngModel)]="ejercicio.ejercicio_id">
+                        <option>Ejercicio</option>
+                        <option *ngFor="let ejercicio of ejercicios" value="{{ejercicio.id}}">{{ejercicio.nombre}}</option> -->
+                    </select>
+                    <label for="floatingSelect">Seleccione un ejercicio</label>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="serie" autocapitalize="words" name="serie" [(ngModel)]="ejercicio.serie">
+                    <label for="floatingInput">Serie</label>
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn btn-outline-warning" (click)="addEjercicio()"><i class="bi bi-person-plus-fill" style="font-size: 1.2rem;"></i> Agregar Ejercicio </button>
+            </div>
+            <div class="col">
+                <a type="button" class="btn btn btn-outline-warning" [routerLink]="['/entrenadores/tests']"><i class="bi bi-skip-backward-fill" style="font-size: 1.2rem;"></i> Regresar</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title m-3">Ejercicios del Test # {{id}}</h3>
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Serie</th>
+                        <th scope="col" colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ejercicio_test of ejercicios_tests; index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{ejercicio_test.nombre}}</td>
+                        <td>{{ejercicio_test.serie}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
